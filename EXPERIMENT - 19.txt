@@ -1,0 +1,13 @@
+from sklearn.naive_bayes import GaussianNB
+import numpy as np
+X = np.array([[25,30000],[35,50000],[45,70000],[50,90000]])
+y = np.array([0,0,1,1])
+model = GaussianNB()
+model.fit(X,y)
+age = int(input("Enter Age: "))
+income = int(input("Enter Income: "))
+result = model.predict([[age,income]])
+if result[0] == 1:
+print("Loan Approved = Yes (1)")
+else:
+print("Loan Approved = No (0)")
